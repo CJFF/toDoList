@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.phonegap.example"
+        versionCode = "10" 
+        version     = "1.0.0" >
+ 
+    <gap:platform name="android" />
+
+    <icon src="res/icon.png" />
+
+  
+
+    <name>Ciarans To Do List</name>
+
+    <description>
+        This is a to do list. 
+    </description>
+
+    <author href="https://www.digitalskillsacademy.com" email="ciaran.forde@webelevate.ie">
+        Ciaran Forde 
+    </author>
+
+</widget>
