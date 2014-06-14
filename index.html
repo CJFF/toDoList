@@ -1,0 +1,63 @@
+<html data-ng-app>
+  <head>
+    
+    <script src="js/angular.js"></script>
+    <script type="text/javascript" src="js/todolistangular.js"></script>
+    <script src="phonegap.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  
+  </head>
+   <!-- **DIRECTIVES**At a high level, directives are markers on a DOM element (such as an attribute, element name, comment or CSS class) that tell AngularJS's HTML compiler ($compile) to attach a specified behavior to that DOM element or even transform the DOM element and its children.-->
+
+  <body>
+    
+    <div class="wrapper" data-ng-controller="ListController">
+
+      <!--The ngController directive attaches a controller class to the view. This is a key aspect of how angular supports the principles behind the Model-View-Controller design pattern. This directve creates a new scope.
+
+      MVC components in angular:
+
+      Model — The Model is scope properties; scopes are attached to the DOM where scope properties are accessed through bindings.
+      View — The template (HTML with data bindings) that is rendered into the View.
+      Controller — The ngController directive specifies a Controller class; the class contains business logic behind the application to decorate the scope with functions and values
+
+    -->
+    
+      <h2>Ciaran's To Do List</h2>
+      
+      <ul>
+        
+        <li data-ng-repeat="todo in todos">
+
+          <!--The ngRepeat directive instantiates a template once per item from a collection. Each template instance gets its own scope, where the given loop variable is set to the current collection item, and $index is set to the item index or key.-->
+
+          
+          <input type="checkbox" data-ng-model="todo.done"/>
+
+          <!--ngModel is a binding directive. The ngModel directive binds an input,select, textarea (or custom form control) to a property on the scope using NgModelController, which is created and exposed by this directive.-->
+         
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+        <!--class used for styling, list will strikeout when clicked-->
+        </li>
+      </ul>
+      
+
+      <form>
+        <input class="add-input" placeholder="to do...." type="text" data-ng-model="formTodoText" />
+
+        <button class="add-btn" data-ng-click="addTodo()"><h2>Add</h2></button>
+
+        <!--ngClick directive, attaches the addTo do function here, which receives user input from the forTodotext input-->
+      
+      </form>
+      
+      <button class="clear-btn" data-ng-click="clearCompleted()">Delete Completed Tasks</button>
+
+      <!--ngClick directive, attached the clearCompleted function, clears the list of items that have been marked off as completed-->
+    
+    </div>
+  
+  </body>
+  
+</html>
